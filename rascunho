@@ -1,0 +1,26 @@
+n x n
+ Si(j) = the total energy of the path that ends at pixel (i-j).
+ Sn(j) = lowest energy that ends at pixel (n,j).
+
+ height - Sn
+ width  - Sm 
+
+ i<= j <= m
+
+ Sx(y) = energyCalculator(x,y) + 
+
+ starting position of scan
+  
+  min{Sn(1), Sn(2)-  Sn(m)}
+   c = c(nxm)
+
+
+--Seam Carving Algorithm
+
+    calcula o minimo de cada valor baixo 
+    soma com o numero de cima
+    completou = passa por todas as linhas,
+    decidindo qual o menor
+    passa para a próxima coluna 
+    salvando posição
+    decide caminho até o final 
