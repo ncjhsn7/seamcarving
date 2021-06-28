@@ -151,7 +151,15 @@ void keyboard(unsigned char key, int x, int y) {
     }
     glutPostRedisplay();
 }
+    int energyCalculator(RGB previousPixel, RGB nextPixel, RGB topPixel, RGB lowerPixel){
+            return (pow(previousPixel.r - nextPixel.r, 2)) + (pow(previousPixel.g - nextPixel.g, 2)) + 
+                   (pow(previousPixel.b - nextPixel.b, 2)) + (pow(previousPixel.r - nextPixel.r, 2)) + 
+                   (pow(previousPixel.g - nextPixel.g, 2)) + (pow(previousPixel.b - nextPixel.b, 2)) +
+                   (pow(topPixel.r - lowerPixel.r, 2))     + (pow(topPixel.g - lowerPixel.g, 2)) + 
+                   (pow(topPixel.b - lowerPixel.b, 2));
 
+    }
+    
 void arrow_keys(int a_keys, int x, int y) {
     switch (a_keys) {
         case GLUT_KEY_RIGHT:
