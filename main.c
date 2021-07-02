@@ -175,6 +175,7 @@ void arrow_keys(int a_keys, int x, int y) {
 }
 
 void removeLine(int direction) {
+  pic[2].width += direction;
   int auxWidth = pic[2].width;
   int lowestEnergyPixel = 0;
   printf("TARGET W VALUE: %d \n", dw);
@@ -205,7 +206,9 @@ void removeLine(int direction) {
 
       if (i == 0) {
         if (j == 0)
-          energy[0] += energyCalculator(pic[2].img[1], pic[2].img[auxWidth - 1], pic[2].img[pic[2].width * (pic[2].height - 1)],
+          energy[0] +=
+              energyCalculator(pic[2].img[1], pic[2].img[auxWidth - 1],
+                               pic[2].img[pic[2].width * (pic[2].height - 1)],
                                pic[2].img[pic[2].width]);
 
         else if (j == auxWidth - 1)
@@ -329,7 +332,6 @@ void removeLine(int direction) {
   }
   free(energy);
   uploadTexture();
-  
   free(maskAux);
 }
 
@@ -520,9 +522,10 @@ int accumulatedEnergy(int* energy, int maxWidth, int actualWidth, int i) {
   if (i % maxWidth != 0 && energy[i - maxWidth - 1] < finalEnergy)
     finalEnergy = energy[i - maxWidth - 1];
 
-  if (i % maxWidth != (actualWidth - 1) && energy[i - maxWidth * 1] < finalEnergy) 
+  if (i % maxWidth != (actualWidth - 1) &&
+      energy[i - maxWidth * 1] < finalEnergy)
     finalEnergy = energy[i - maxWidth * 1];
-  
+
   return finalEnergy;
 }
 
