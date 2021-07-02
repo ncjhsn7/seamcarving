@@ -5,6 +5,7 @@ _Credit: Nicolas Pietro -- Alexandre Agustini & Marcelo Cohen_
 
 ## Execution
 > Type `./seamcarving [image].jpg [mask].jpg` on terminal
-> Press '3' and then 'S'button. 
+> 
+> Then Press '3' and then 'S' button. 
 > 
 > The current program not works well by pressing _left_ or _right_ keys but works when you press 'S' wich resize the entire image at once
